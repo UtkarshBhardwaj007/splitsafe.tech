@@ -216,11 +216,15 @@ a {
     justify-content: space-between;
     align-items: center;
     padding: 1rem 0;
+    overflow: hidden;
+    max-width: 100%;
 }
 
 .logo img {
     height: 40px;
     width: auto;
+    max-width: 150px;
+    object-fit: contain;
 }
 
 .nav-left {
@@ -643,21 +647,46 @@ a {
     .nav-wrapper {
         flex-direction: row;
         align-items: center;
+        gap: 0.5rem;
     }
+    
     .theme-toggle {
         order: 1;
         margin-left: 0;
-        margin-right: 1rem;
+        margin-right: 0.5rem;
+        flex-shrink: 0;
     }
+    
     .nav-left {
         order: 2;
-        flex: 1;
+        flex: 1 1 auto;
+        min-width: 0;
+        display: flex;
+        justify-content: center;
     }
+    
+    .logo {
+        flex-shrink: 1;
+        min-width: 0;
+        overflow: hidden;
+    }
+    
+    .logo img {
+        max-width: 120px;
+        height: 35px;
+    }
+    
     .mobile-menu-toggle {
         order: 3;
         display: block;
         z-index: 1100;
-        margin-left: 1rem;
+        margin-left: 0.5rem;
+        flex-shrink: 0;
+        margin-right: 0;
+    }
+    
+    .container {
+        padding: 0 15px;
     }
 
     .nav-menu {
@@ -666,12 +695,17 @@ a {
         left: -100%;
         width: 100%;
         height: calc(100vh - 70px);
-        background: white;
+        background: var(--background);
         flex-direction: column;
         padding: 2rem;
         gap: 1.5rem;
         transition: left 0.3s ease;
         box-shadow: var(--shadow-lg);
+    }
+
+    [data-theme="dark"] .nav-menu {
+        background: var(--background);
+        border-right: 1px solid var(--border-color);
     }
 
     .nav-menu.active {
