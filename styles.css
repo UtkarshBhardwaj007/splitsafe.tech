@@ -81,7 +81,7 @@
 }
 
 [data-theme="dark"] .cta-button.large {
-    background: var(--accent-color);
+    background: var(--primary-color);
     color: var(--background);
 }
 
@@ -223,9 +223,16 @@ a {
     width: auto;
 }
 
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
 .nav-menu {
     display: flex;
-    align-items: left;
+    align-items: center;
+    justify-content: flex-start;
     gap: 2rem;
 }
 
@@ -536,7 +543,7 @@ a {
 /* CTA Section */
 .cta-section {
     padding: 80px 0;
-    background: linear-gradient(135deg, var(--primary-color) 0%, #2a1a6e 100%);
+    background: linear-gradient(135deg, var(--primary-color) 50%, #2a1a6e 50%);
     color: white;
     text-align: center;
 }
@@ -553,8 +560,8 @@ a {
 }
 
 .cta-button.large {
-    background: var(--accent-color);
-    color: var(--primary-color);
+    background: var(--primary-color);
+    color: var(--accent-color);
     padding: 1rem 2.5rem;
     font-size: 1.125rem;
     display: inline-block;
